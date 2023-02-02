@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom"
 import "./index.css"
 import { theme } from "./types"
 import { Popular } from "./components/Popular"
+import { Battle } from "./components/Battle"
 
 export const App = () => {
     const [theme, setTheme] = useState<theme>("light");
@@ -19,7 +20,7 @@ export const App = () => {
                             <Nav toggleTheme={toggleTheme} />
                             <Routes>
                                 <Route path="/" element={<Popular />} />
-                                <Route path="battle" element={<h1>Battle Page</h1>} />
+                                <Route path="battle" element={<Battle />} />
                                 <Route path="*" element={<h1>404 not found!!!</h1>} />
                             </Routes>
                         </div>
