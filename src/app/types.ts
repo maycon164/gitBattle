@@ -52,12 +52,39 @@ export function LanguageRepoReducer(state: LanguageReposState, actions: Language
 
 export type Repo = {
     name: string,
-    owner: {
-        login: string,
-        avatar_url: string
-    },
+    owner: User,
     html_url: string,
     stargazers_count: number,
     forks: number,
     open_issues: number
 }
+
+export type User = {
+    login: string,
+    avatar_url: string
+    name: string
+    html_url: string
+    location?: string
+    company?: string
+    followers: number
+    following: number
+}
+
+export type BattleReducerState = {
+    winner: null | User & { score: number }
+    loser: null | User & { score: number }
+    error: null | string
+    loading: boolean
+}
+
+
+export type BattleReducerActions =
+    | {
+        type: "success"
+        winner: User & { score: number }
+        loser: User & { score: number }
+    }
+    | {
+        type: "error"
+        message: string
+    }

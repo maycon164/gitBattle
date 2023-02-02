@@ -6,6 +6,7 @@ import "./index.css"
 import { theme } from "./types"
 import { Popular } from "./components/Popular"
 import { Battle } from "./components/Battle"
+import { Results } from "./components/Results"
 
 export const App = () => {
     const [theme, setTheme] = useState<theme>("light");
@@ -21,6 +22,7 @@ export const App = () => {
                             <Routes>
                                 <Route path="/" element={<Popular />} />
                                 <Route path="battle" element={<Battle />} />
+                                <Route path="battle/results" element={<Results />} />
                                 <Route path="*" element={<h1>404 not found!!!</h1>} />
                             </Routes>
                         </div>
